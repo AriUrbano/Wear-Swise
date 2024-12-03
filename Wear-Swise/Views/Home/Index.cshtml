@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<div>
+    <body>
+    <main>
+        <header class="header">
+        <div class="logo">
+            <h1><img src="~/Images/Logo Wear Swise.png" alt=""></h1>
+        </div>
+        <nav class="menu">
+            <button>Equipo</button>
+            <button>Comprar Productos</button>
+            <button>Vender Productos</button>
+        </nav>
+        <div class="search">
+            <input type="text" placeholder="Buscar...">
+        </div>
+        <div class="icons">
+            <button class="cart">
+                <span class="icon"><img src="~/Images/carrito-de-compras negro.png" alt="Carrito"></span> 
+            </button>
+            <button class="profile">
+               <span class="icon" onclick="window.location.href='@Url.Action("Login", "Account")'">
+  <img src="~/Images/usuario (1).png" alt="Usuario">
+</span>
+            </button>
+        </div>
+    </header>
+
+        <div class="welcome">
+            <h1>BIENVENIDO A WEAR SWISE</h1>
+            <div class="categories">
+                <div class="category">
+                    <img src="Images/foto moodboard 3.jpg" alt="Hombres">
+                    <p>HOMBRES</p>
+                </div>
+                <div class="category">
+                    <img src="Images/moodboard 4.jpg" alt="Mujeres">
+                    <p>MUJERES</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</body>
+</div>
