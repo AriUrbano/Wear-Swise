@@ -53,6 +53,7 @@ public ActionResult Registrar(Usuario oUsuario)
             BD.ValidarUsuario(oUsuario);
             if (oUsuario.idUsuario != 0)
             {
+                HttpContext.Session.SetString("user", (oUsuario.Email, oUsuario.Contrasena).ToString());
                 return RedirectToAction("Index", "Home");
             }
             else {
