@@ -207,26 +207,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ariur\\.nuget\\packages\\": {}
+    "C:\\Users\\48184141\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ariur\\Downloads\\Wear-Swise github\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
+      "projectUniqueName": "C:\\Users\\48184141\\Desktop\\sas\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
       "projectName": "PrimerProyecto",
-      "projectPath": "C:\\Users\\ariur\\Downloads\\Wear-Swise github\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
-      "packagesPath": "C:\\Users\\ariur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ariur\\Downloads\\Wear-Swise github\\Wear-Swise\\Wear-Swise\\obj\\",
+      "projectPath": "C:\\Users\\48184141\\Desktop\\sas\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
+      "packagesPath": "C:\\Users\\48184141\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\48184141\\Desktop\\sas\\Wear-Swise\\Wear-Swise\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ariur\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\48184141\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -278,7 +276,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

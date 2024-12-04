@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
-
+[Serializable]
 public class Usuario
 {
     public int   idUsuario { get; set; }
@@ -9,13 +9,14 @@ public class Usuario
     public string Contrasena { get; set; }
     public int Telefono { get; set; }
     public string ConfimarContrasena {get;set;}
-    public Usuario(string nombreusuario, int idusuario, string email, string contrasena, int telefono)
+    public Usuario(string nombreusuario, int idusuario, string email, string contrasena, int telefono, string confimarcontrasena )
     {
         idUsuario = idusuario;
         NombreUsuario = nombreusuario;
         Email= email;
         Contrasena = contrasena;
         Telefono = telefono;
+        ConfimarContrasena = confimarcontrasena;
     }
     public Usuario()
     {
