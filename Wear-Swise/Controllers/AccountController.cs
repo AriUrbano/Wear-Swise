@@ -65,30 +65,29 @@ using System.Data;
         {
             oUsuario.Contrasena = ConvertirSha256(oUsuario.Contrasena);
 
+            string usuarioEmail;
+
             using (SqlConnection cn = new SqlConnection(_connectionString))
             {
+            SqlCommand cmd = new SqlCommand("sp_ValidarUsuario", cn);
+            cmd.Parameters.AddWithValue("Email", oUsuario.Email);
+            cmd.Parameters.AddWithValue("Contrasena", oUsuario.Contrasena);
+            cmd.CommandType = CommandType.StoredProcedure;
 
-                SqlCommand cmd = new SqlCommand("sp_ValidarUsuario", cn);
-                cmd.Parameters.AddWithValue("Correo", oUsuario.Email);
-                cmd.Parameters.AddWithValue("Clave", oUsuario.Contrasena);
-                cmd.CommandType = CommandType.StoredProcedure;
+            cn.Open();
 
-                cn.Open();
-
-                oUsuario.idUsuario = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-
+            usuarioEmail = cmd.ExecuteScalar()?.ToString();
             }
 
-            if (oUsuario.idUsuario != 0)
+            if (!string.IsNullOrEmpty(usuarioEmail))
             {
-
-                HttpContext.Session.SetString("user" , new Usuario(oUsuario.NombreUsuario, oUsuario.idUsuario, oUsuario.Email, oUsuario.Contrasena, oUsuario.Telefono, oUsuario.ConfimarContrasena).ToString());
-                return RedirectToAction("Index", "Home");
+                HttpContext.Session.SetString("user" , new Usuario(oUsuario.NombreUsuario, oUsuario.idUsuario, oUsuario.Email, oUsuario.Contrasena, oUsuario.Telefono, oUsuario.ConfimarContrasena).ToString());            return RedirectToAction("Index", "Home");
             }
-            else {
-                ViewData["Mensaje"] = "usuario no encontrado";
+            else
+            {
+            ViewData["Mensaje"] = "Usuario no encontrado";
                 return View();
-            } 
+            }
 
            
         }
