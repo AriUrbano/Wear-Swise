@@ -213,11 +213,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\48113061\\Desktop\\sas\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
+      "projectUniqueName": "C:\\Users\\48113061\\Documents\\sas\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
       "projectName": "PrimerProyecto",
-      "projectPath": "C:\\Users\\48113061\\Desktop\\sas\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
+      "projectPath": "C:\\Users\\48113061\\Documents\\sas\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
       "packagesPath": "C:\\Users\\48113061\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\48113061\\Desktop\\sas\\Wear-Swise\\Wear-Swise\\obj\\",
+      "outputPath": "C:\\Users\\48113061\\Documents\\sas\\Wear-Swise\\Wear-Swise\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

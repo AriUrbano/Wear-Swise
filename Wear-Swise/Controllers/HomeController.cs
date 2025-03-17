@@ -15,11 +15,6 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        ViewBag.User = Usuario.FromString(HttpContext.Session.GetString("user"));
-        if(ViewBag.User is null)
-        {
-            return RedirectToAction("Login", "Account");
-        }
         return View();
     }
 
