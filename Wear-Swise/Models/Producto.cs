@@ -1,11 +1,12 @@
-namespace TuProyecto.Models
+namespace PrimerProyecto.Models
 {
     public class Producto
     {
-        public string NombreProducto { get; set; }
-        public string Descripcion { get; set; }
-        public decimal Precio { get; set; }
-        public int Stock { get; set; }
-        public int idCategoria { get; set; }
+        public int id_producto { get; set; }
+        public string nombre_producto { get; set; }
+        public string descripcion { get; set; }
+        public decimal precio { get; set; }
+        public int stock { get; set; }
+        public int? id_categoria { get; set; } 
     }
 }

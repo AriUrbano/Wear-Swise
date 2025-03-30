@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using PrimerProyecto.Models;
+using PrimerProyecto.Models ;
 
 namespace PrimerProyecto.Controllers;
 

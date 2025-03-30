@@ -1,119 +1,116 @@
-using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-using PrimerProyecto;
-using System.Text;
-using System.Security.Cryptography;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
+using Microsoft.AspNetCore.Mvc;
+using PrimerProyecto.Models;
+
+namespace PrimerProyecto.Controllers
+{
     public class AccountController : Controller
     {
-        static string _connectionString = @"Server=localhost;DataBase=Wear-Swise;Trusted_Connection=true;";
-
-        // GET: Acceso
-        public ActionResult Login()
+        // Cadena de conexión (ajusta según tu configuración)
+        private static string _connectionString = @"Server=.\SQLEXPRESS;Database=Info360;Trusted_Connection=True;";        // GET: Muestra el formulario de login
+        [HttpGet]
+        public IActionResult Login()
         {
             return View();
         }
 
-
-        public ActionResult Registrar()
+        [HttpPost]
+public IActionResult Login(string correo_electronico, string contrasena)
+{
+    try
+    {
+        using (SqlConnection cn = new SqlConnection(_connectionString))
         {
-            return View();
-        }
-
-
-         [HttpPost]
-        public ActionResult Registrar(Usuario oUsuario)
-        {
-            bool registrado;
-            string mensaje;
-
-
-            using (SqlConnection cn = new SqlConnection(_connectionString)) {
-
-                SqlCommand cmd = new SqlCommand("sp_RegistrarUsuario", cn);
-                cmd.Parameters.AddWithValue("Email", oUsuario.Email);
-                cmd.Parameters.AddWithValue("Contrasena", oUsuario.Contrasena);
-                cmd.Parameters.Add("Registrado", SqlDbType.Bit).Direction = ParameterDirection.Output;
-                cmd.Parameters.Add("Mensaje", SqlDbType.VarChar,100).Direction = ParameterDirection.Output;
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                cn.Open();
-
-                cmd.ExecuteNonQuery();
-
-                registrado = Convert.ToBoolean(cmd.Parameters["Registrado"].Value);
-                mensaje = cmd.Parameters["Mensaje"].Value.ToString();
-
-
-            }    
-
-            ViewData["Mensaje"] = mensaje;
-
-            if (registrado)
-            {
-                return RedirectToAction("Login", "Account");
-            }
-            else {
-                return View();
-            }
-
-        }
-
-       [HttpPost]
-        public ActionResult Login(Usuario oUsuario)
-        {
-            oUsuario.Contrasena = ConvertirSha256(oUsuario.Contrasena);
-
-            string usuarioEmail;
-
-            using (SqlConnection cn = new SqlConnection(_connectionString))
-            {
-            SqlCommand cmd = new SqlCommand("sp_ValidarUsuario", cn);
-            cmd.Parameters.AddWithValue("Email", oUsuario.Email);
-            cmd.Parameters.AddWithValue("Contrasena", oUsuario.Contrasena);
-            cmd.CommandType = CommandType.StoredProcedure;
-
+            SqlCommand cmd = new SqlCommand(
+                "SELECT id_usuario, nombre_usuario, contrasena FROM usuarios WHERE correo_electronico = @email", 
+                cn);
+                
+            cmd.Parameters.AddWithValue("@email", correo_electronico);
             cn.Open();
 
-            usuarioEmail = cmd.ExecuteScalar()?.ToString();
-            }
-
-            if (!string.IsNullOrEmpty(usuarioEmail))
+            using (var reader = cmd.ExecuteReader())
             {
-                HttpContext.Session.SetString("user" , new Usuario(oUsuario.NombreUsuario, oUsuario.idUsuario, oUsuario.Email, oUsuario.Contrasena, oUsuario.Telefono, oUsuario.ConfimarContrasena).ToString());            return RedirectToAction("Index", "Home");
+                if (reader.Read())
+                {
+                    string storedHash = reader["contrasena"].ToString();
+                    if (Usuario.VerifyPassword(contrasena, storedHash)) // <-- Usa BCrypt
+                    {
+                        HttpContext.Session.SetInt32("user_id", reader.GetInt32(0));
+                        HttpContext.Session.SetString("user_name", reader.GetString(1));
+                        return RedirectToAction("Index", "Home");
+                    }
+                }
             }
-            else
-            {
-            ViewData["Mensaje"] = "Usuario no encontrado";
-                return View();
-            }
-
-           
         }
-        public IActionResult Logout()
+        
+        ViewData["Mensaje"] = "Credenciales incorrectas";
+        return View();
+    }
+    catch (Exception ex)
     {
-        HttpContext.Session.Remove("user");
-        return RedirectToAction("Login");
+        System.Diagnostics.Debug.WriteLine($"ERROR: {ex.ToString()}");
+        ViewData["Mensaje"] = "Error interno. Contacte al administrador.";
+        return View();
     }
-    public static string ConvertirSha256(string texto)
+}
+        // GET: Muestra el formulario de registro
+        [HttpGet]
+        public IActionResult Registrar()
         {
-            //using System.Text;
-            //USAR LA REFERENCIA DE "System.Security.Cryptography"
-
-            StringBuilder Sb = new StringBuilder();
-            using (SHA256 hash = SHA256Managed.Create())
-            {
-                Encoding enc = Encoding.UTF8;
-                byte[] result = hash.ComputeHash(enc.GetBytes(texto));
-
-                foreach (byte b in result)
-                    Sb.Append(b.ToString("x2"));
-            }
-
-            return Sb.ToString();
+            return View();
         }
 
+        // POST: Procesa el registro
+        [HttpPost]
+        public IActionResult Registrar(Usuario usuario)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View(usuario);
+                }
 
+                using (SqlConnection cn = new SqlConnection(_connectionString))
+                {
+                    // Consulta que coincide con tu estructura de BD
+                    SqlCommand cmd = new SqlCommand(
+                        "INSERT INTO usuarios (nombre_usuario, correo_electronico, contrasena, Telefeno) " +
+                        "VALUES (@nombre, @email, @pass, @tel);", 
+                        cn);
+                    
+                    // Parámetros exactamente como en tu BD
+                    cmd.Parameters.AddWithValue("@nombre", usuario.nombre_usuario);
+                    cmd.Parameters.AddWithValue("@email", usuario.correo_electronico);
+                    cmd.Parameters.AddWithValue("@pass", Usuario.HashPassword(usuario.contrasena));
+                    cmd.Parameters.AddWithValue("@tel", usuario.Teléfono );
 
+                    cn.Open();
+                    cmd.ExecuteNonQuery();
+                    
+                    // Redirige al login con mensaje de éxito
+                    TempData["RegistroExitoso"] = "¡Registro completado! Por favor inicia sesión";
+                    return RedirectToAction("Login");
+                }
+            }
+            catch (SqlException ex) when (ex.Number == 2627) // Violación de índice único
+            {
+                ViewData["Mensaje"] = "El correo electrónico ya está registrado";
+                return View(usuario);
+            }
+            catch (Exception ex)
+            {
+                ViewData["Mensaje"] = $"Error al registrar: {ex.Message}";
+                return View(usuario);
+            }
+        }
+
+        // Cerrar sesión
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login");
+        }
     }
+}

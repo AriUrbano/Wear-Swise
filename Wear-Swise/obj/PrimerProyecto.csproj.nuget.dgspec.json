@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\48113061\\Documents\\sas\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj": {}
+    "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj": {}
   },
   "projects": {
-    "C:\\Users\\48113061\\Documents\\sas\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj": {
+    "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48113061\\Documents\\sas\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
+        "projectUniqueName": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
         "projectName": "PrimerProyecto",
-        "projectPath": "C:\\Users\\48113061\\Documents\\sas\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
-        "packagesPath": "C:\\Users\\48113061\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48113061\\Documents\\sas\\Wear-Swise\\Wear-Swise\\obj\\",
+        "projectPath": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
+        "packagesPath": "C:\\Users\\ariur\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\48113061\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ariur\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,13 +45,29 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "Dapper": {
               "target": "Package",
               "version": "[2.1.35, )"
             },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[9.0.3, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.9.0, )"
+            },
+            "System.Security.Cryptography.Algorithms": {
+              "target": "Package",
+              "version": "[4.3.1, )"
             }
           },
           "imports": [
@@ -77,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
