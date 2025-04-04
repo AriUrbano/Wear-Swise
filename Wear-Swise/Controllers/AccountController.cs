@@ -10,10 +10,27 @@ namespace PrimerProyecto.Controllers
         // Cadena de conexión (ajusta según tu configuración)
         private static string _connectionString = @"Server=.\SQLEXPRESS;Database=Info360;Trusted_Connection=True;";        // GET: Muestra el formulario de login
         [HttpGet]
-        public IActionResult Login()
-        {
-            return View();
-        }
+       [HttpGet]
+public IActionResult Login()
+{
+    // Si ya está autenticado, redirige al Home
+    if (HttpContext.Session.GetInt32("user_id") != null)
+    {
+        return RedirectToAction("Index", "Home");
+    }
+    return View();
+}
+
+[HttpGet]
+public IActionResult Registrar()
+{
+    // Si ya está autenticado, redirige al Home
+    if (HttpContext.Session.GetInt32("user_id") != null)
+    {
+        return RedirectToAction("Index", "Home");
+    }
+    return View();
+}
 
         [HttpPost]
 public IActionResult Login(string correo_electronico, string contrasena)
@@ -22,24 +39,23 @@ public IActionResult Login(string correo_electronico, string contrasena)
     {
         using (SqlConnection cn = new SqlConnection(_connectionString))
         {
+            // Consulta directa sin hash
             SqlCommand cmd = new SqlCommand(
-                "SELECT id_usuario, nombre_usuario, contrasena FROM usuarios WHERE correo_electronico = @email", 
+                "SELECT id_usuario, nombre_usuario FROM usuarios " +
+                "WHERE correo_electronico = @email AND contrasena = @pass", 
                 cn);
                 
             cmd.Parameters.AddWithValue("@email", correo_electronico);
-            cn.Open();
+            cmd.Parameters.AddWithValue("@pass", contrasena);  // <-- Contraseña en texto plano
 
+            cn.Open();
             using (var reader = cmd.ExecuteReader())
             {
                 if (reader.Read())
                 {
-                    string storedHash = reader["contrasena"].ToString();
-                    if (Usuario.VerifyPassword(contrasena, storedHash)) // <-- Usa BCrypt
-                    {
-                        HttpContext.Session.SetInt32("user_id", reader.GetInt32(0));
-                        HttpContext.Session.SetString("user_name", reader.GetString(1));
-                        return RedirectToAction("Index", "Home");
-                    }
+                    HttpContext.Session.SetInt32("user_id", reader.GetInt32(0));
+                    HttpContext.Session.SetString("user_name", reader.GetString(1));
+                    return RedirectToAction("Index", "Home");
                 }
             }
         }
@@ -49,68 +65,57 @@ public IActionResult Login(string correo_electronico, string contrasena)
     }
     catch (Exception ex)
     {
-        System.Diagnostics.Debug.WriteLine($"ERROR: {ex.ToString()}");
+        System.Diagnostics.Debug.WriteLine($"ERROR: {ex}");
         ViewData["Mensaje"] = "Error interno. Contacte al administrador.";
         return View();
     }
 }
-        // GET: Muestra el formulario de registro
-        [HttpGet]
-        public IActionResult Registrar()
+       [HttpGet]
+
+[HttpPost]
+public IActionResult Registrar(Usuario usuario)
+{
+    try
+    {
+        if (!ModelState.IsValid)
         {
-            return View();
+            return View(usuario);
         }
 
-        // POST: Procesa el registro
-        [HttpPost]
-        public IActionResult Registrar(Usuario usuario)
+        using (SqlConnection cn = new SqlConnection(_connectionString))
         {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return View(usuario);
-                }
+            SqlCommand cmd = new SqlCommand(
+                "INSERT INTO usuarios (nombre_usuario, correo_electronico, contrasena) " +
+                "VALUES (@nombre, @email, @pass)", cn);
+            
+            cmd.Parameters.AddWithValue("@nombre", usuario.nombre_usuario);
+            cmd.Parameters.AddWithValue("@email", usuario.correo_electronico);
+            cmd.Parameters.AddWithValue("@pass", usuario.contrasena);
 
-                using (SqlConnection cn = new SqlConnection(_connectionString))
-                {
-                    // Consulta que coincide con tu estructura de BD
-                    SqlCommand cmd = new SqlCommand(
-                        "INSERT INTO usuarios (nombre_usuario, correo_electronico, contrasena, Telefeno) " +
-                        "VALUES (@nombre, @email, @pass, @tel);", 
-                        cn);
-                    
-                    // Parámetros exactamente como en tu BD
-                    cmd.Parameters.AddWithValue("@nombre", usuario.nombre_usuario);
-                    cmd.Parameters.AddWithValue("@email", usuario.correo_electronico);
-                    cmd.Parameters.AddWithValue("@pass", Usuario.HashPassword(usuario.contrasena));
-                    cmd.Parameters.AddWithValue("@tel", usuario.Teléfono );
-
-                    cn.Open();
-                    cmd.ExecuteNonQuery();
-                    
-                    // Redirige al login con mensaje de éxito
-                    TempData["RegistroExitoso"] = "¡Registro completado! Por favor inicia sesión";
-                    return RedirectToAction("Login");
-                }
-            }
-            catch (SqlException ex) when (ex.Number == 2627) // Violación de índice único
-            {
-                ViewData["Mensaje"] = "El correo electrónico ya está registrado";
-                return View(usuario);
-            }
-            catch (Exception ex)
-            {
-                ViewData["Mensaje"] = $"Error al registrar: {ex.Message}";
-                return View(usuario);
-            }
+            cn.Open();
+            cmd.ExecuteNonQuery();
+            
+            TempData["RegistroExitoso"] = "¡Registro completado! Por favor inicia sesión";
+            return RedirectToAction("Login");
         }
-
+    }
+    catch (SqlException ex) when (ex.Number == 2627)
+    {
+        ViewData["Mensaje"] = "El correo electrónico ya está registrado";
+        return View(usuario);
+    }
+    catch (Exception ex)
+    {
+        ViewData["Mensaje"] = $"Error al registrar: {ex.Message}";
+        return View(usuario);
+    }
+}
         // Cerrar sesión
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
             return RedirectToAction("Login");
         }
+        
     }
 }

@@ -18,6 +18,13 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    @if (Context.Session.GetInt32("user_id") != null)
+{
+    <div class="float-end">
+        <span class="me-3">Bienvenido @Context.Session.GetString("user_name")</span>
+        <a href="@Url.Action("Logout", "Account")" class="btn btn-sm btn-danger">Cerrar Sesión</a>
+    </div>
+}
 </body>
 
 </html>

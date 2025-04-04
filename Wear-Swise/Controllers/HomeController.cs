@@ -13,8 +13,18 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+     public IActionResult Index()
     {
+        // Verifica si hay sesión activa para mostrar contenido diferente
+        if (HttpContext.Session.GetInt32("user_id") != null)
+        {
+            ViewBag.UserName = HttpContext.Session.GetString("user_name");
+            ViewBag.IsLoggedIn = true;
+        }
+        else
+        {
+            ViewBag.IsLoggedIn = false;
+        }
         return View();
     }
 

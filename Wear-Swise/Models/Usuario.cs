@@ -1,7 +1,4 @@
-using System;
 using System.ComponentModel.DataAnnotations;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace PrimerProyecto.Models
 {
@@ -19,35 +16,18 @@ namespace PrimerProyecto.Models
         public string correo_electronico { get; set; }
 
         [Required(ErrorMessage = "La contraseña es obligatoria")]
-        [StringLength(255, MinimumLength = 6, ErrorMessage = "La contraseña debe tener al menos 6 caracteres")]
+        [StringLength(255, MinimumLength = 4, ErrorMessage = "La contraseña debe tener al menos 4 caracteres")]
         public string contrasena { get; set; }
 
-        public DateTime? fecha_nacimiento { get; set; }
-
-        [Required(ErrorMessage = "El teléfono es obligatorio")]
-        public int Teléfono  { get; set; } // Exactamente como en tu BD (con 1 'e')
-
-        // Constructor vacío necesario
+        // Constructor vacío
         public Usuario() { }
 
-        // Constructor para registro
-        public Usuario(string nombre, string email, string password, int telefono)
+        // Constructor simplificado
+        public Usuario(string nombre, string email, string password)
         {
             nombre_usuario = nombre;
             correo_electronico = email;
-            contrasena = (password);
-            Teléfono  = telefono;
+            contrasena = password;
         }
-        public static string HashPassword(string password)
-{
-    return BCrypt.Net.BCrypt.HashPassword(password);
-}
-
-public static bool VerifyPassword(string inputPassword, string storedHash)
-{
-    return BCrypt.Net.BCrypt.Verify(inputPassword, storedHash);
-}
-
-
     }
 }
