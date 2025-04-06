@@ -9,7 +9,7 @@ namespace PrimerProyecto.Controllers
     {
         // Cadena de conexión (ajusta según tu configuración)
         private static string _connectionString = @"Server=.\SQLEXPRESS;Database=Info360;Trusted_Connection=True;";        // GET: Muestra el formulario de login
-        [HttpGet]
+        
        [HttpGet]
 public IActionResult Login()
 {
@@ -32,7 +32,7 @@ public IActionResult Registrar()
     return View();
 }
 
-        [HttpPost]
+[HttpPost]
 public IActionResult Login(string correo_electronico, string contrasena)
 {
     try
@@ -70,7 +70,6 @@ public IActionResult Login(string correo_electronico, string contrasena)
         return View();
     }
 }
-       [HttpGet]
 
 [HttpPost]
 public IActionResult Registrar(Usuario usuario)
