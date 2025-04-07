@@ -1,0 +1,103 @@
+/* Estilos generales de la navbar */
+.navbar {
+    background-color: #2d2d2d; /* Fondo más claro */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Logo */
+.navbar .logo {
+    margin-left: 40px; /* Separación del borde */
+}
+
+
+/* Contenedor de botones: distribución uniforme */
+.navbar .nav-buttons {
+    display: flex;
+    justify-content: space-around;
+    flex-grow: 1; /* Permite que ocupen el espacio disponible */
+    margin: 0 20px; /* Espaciado lateral */
+}
+
+
+/* Estilos de los botones */
+.navbar .nav-buttons button {
+    background-color: transparent;
+    border: 1px solid #aaff00; /* Color del borde */
+    color: white;
+    padding: 12px 36px; /* Espaciado mayor */
+    border-radius: 90px; /* Más redondos */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+/* Barra de búsqueda */
+.navbar .search-bar {
+    background-color: white;
+    border-radius: 20px;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    width: 200px; /* Ajusta el tamaño */
+    margin-right: 40px;
+}
+
+
+.navbar .search-bar input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    flex-grow: 1;
+}
+
+
+.navbar .search-bar i {
+    color: black; /* Color del icono de búsqueda */
+}
+
+
+/* Íconos de carrito y perfil */
+.navbar .icons {
+    display: flex;
+    gap: 10px;
+    border-radius: 50px;
+    justify-content: space-around;
+}
+
+
+.navbar .icons .icon {
+    background-color: #222;
+    border-radius: 50%;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Ajusta el tamaño del círculo */
+    height: 40px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    margin-top: 50px;
+}
+
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    margin: 10px;
+}
+
+
+.help {
+    color: #7de219;
+    font-weight: bold;
+}
