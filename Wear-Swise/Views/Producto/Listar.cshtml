@@ -1,0 +1,30 @@
+@model List<Producto>
+@{
+    ViewData["Title"] = "Productos Disponibles";
+}
+
+<div class="row">
+    @foreach (var producto in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">@producto.nombre_producto</h5>
+                    <p class="text-success">$@producto.precio.ToString("N2")</p>
+                    
+                    <form asp-action="Agregar" asp-controller="Carrito" method="post">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="idProducto" value="@producto.id_producto" />
+                        <div class="input-group">
+                            <input type="number" name="cantidad" value="1" min="1" 
+                                   class="form-control" style="width: 70px;">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
+</div>

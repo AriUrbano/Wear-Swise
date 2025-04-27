@@ -201,3 +201,5 @@ C:\Users\ariur\Downloads\Info 360\Wear-Swise\Wear-Swise\bin\Debug\net8.0\Microso
 C:\Users\ariur\Downloads\Info 360\Wear-Swise\Wear-Swise\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
 C:\Users\ariur\Downloads\Info 360\Wear-Swise\Wear-Swise\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\ariur\Downloads\Info 360\Wear-Swise\Wear-Swise\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\ariur\Downloads\Info 360\Wear-Swise\Wear-Swise\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+C:\Users\ariur\Downloads\Info 360\Wear-Swise\Wear-Swise\bin\Debug\net8.0\Microsoft.Extensions.WebEncoders.dll

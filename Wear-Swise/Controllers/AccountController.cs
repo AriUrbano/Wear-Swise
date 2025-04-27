@@ -1,5 +1,7 @@
-using System.Data;
 using System.Data.SqlClient;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using PrimerProyecto.Models;
 
@@ -7,114 +9,93 @@ namespace PrimerProyecto.Controllers
 {
     public class AccountController : Controller
     {
-        // Cadena de conexión (ajusta según tu configuración)
-        private static string _connectionString = @"Server=.\SQLEXPRESS;Database=Info360;Trusted_Connection=True;";        // GET: Muestra el formulario de login
-        
-       [HttpGet]
-public IActionResult Login()
-{
-    // Si ya está autenticado, redirige al Home
-    if (HttpContext.Session.GetInt32("user_id") != null)
-    {
-        return RedirectToAction("Index", "Home");
-    }
-    return View();
-}
+        private readonly string _connectionString;
 
-[HttpGet]
-public IActionResult Registrar()
-{
-    // Si ya está autenticado, redirige al Home
-    if (HttpContext.Session.GetInt32("user_id") != null)
-    {
-        return RedirectToAction("Index", "Home");
-    }
-    return View();
-}
-
-[HttpPost]
-public IActionResult Login(string correo_electronico, string contrasena)
-{
-    try
-    {
-        using (SqlConnection cn = new SqlConnection(_connectionString))
+        public AccountController(IConfiguration configuration)
         {
-            // Consulta directa sin hash
-            SqlCommand cmd = new SqlCommand(
-                "SELECT id_usuario, nombre_usuario FROM usuarios " +
-                "WHERE correo_electronico = @email AND contrasena = @pass", 
-                cn);
-                
-            cmd.Parameters.AddWithValue("@email", correo_electronico);
-            cmd.Parameters.AddWithValue("@pass", contrasena);  // <-- Contraseña en texto plano
+            _connectionString = configuration.GetConnectionString("DefaultConnection");
+        }
 
-            cn.Open();
-            using (var reader = cmd.ExecuteReader())
+        // GET: /Account/Login
+       [HttpGet]
+public IActionResult Login(string returnUrl = null)
+{
+    // Pasa el returnUrl al modelo
+    var model = new LoginModel
+    {
+        ReturnUrl = returnUrl ?? Url.Content("~/")
+    };
+    return View(model);
+}
+
+        [HttpPost]
+public async Task<IActionResult> Login(LoginModel model)
+{
+    if (ModelState.IsValid)
+    {
+        var usuario = AutenticarUsuario(model.CorreoElectronico, model.Contrasena);
+        
+        if (usuario != null)
+        {
+            var claims = new List<Claim>
             {
-                if (reader.Read())
+                new Claim(ClaimTypes.NameIdentifier, usuario.id_usuario.ToString()),
+                new Claim(ClaimTypes.Name, usuario.nombre_usuario),
+                new Claim(ClaimTypes.Email, usuario.correo_electronico)
+            };
+
+            var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var principal = new ClaimsPrincipal(identity);
+            
+            // Configuración CORRECTA del login:
+            await HttpContext.SignInAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                principal,
+                new AuthenticationProperties
                 {
-                    HttpContext.Session.SetInt32("user_id", reader.GetInt32(0));
-                    HttpContext.Session.SetString("user_name", reader.GetString(1));
-                    return RedirectToAction("Index", "Home");
+                    IsPersistent = model.Recordarme,
+                    AllowRefresh = true,
+                    ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(30)
+                });
+
+            // Redirección CORRECTA después del login:
+            if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
+            {
+                return Redirect(model.ReturnUrl);
+            }
+            return RedirectToAction("Index", "Home");
+        }
+        ModelState.AddModelError("", "Credenciales inválidas");
+    }
+    return View(model);
+}
+        private Usuario AutenticarUsuario(string email, string password)
+        {
+            using (var cn = new SqlConnection(_connectionString))
+            {
+                var cmd = new SqlCommand(
+                    "SELECT id_usuario, nombre_usuario, correo_electronico " +
+                    "FROM usuarios WHERE correo_electronico = @Email AND contrasena = @Password", 
+                    cn);
+                
+                cmd.Parameters.AddWithValue("@Email", email);
+                cmd.Parameters.AddWithValue("@Password", password);
+                
+                cn.Open();
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        return new Usuario
+                        {
+                            id_usuario = reader.GetInt32(0),
+                            nombre_usuario = reader.GetString(1),
+                            correo_electronico = reader.GetString(2)
+                        };
+                    }
                 }
             }
+            return null;
         }
-        
-        ViewData["Mensaje"] = "Credenciales incorrectas";
-        return View();
-    }
-    catch (Exception ex)
-    {
-        System.Diagnostics.Debug.WriteLine($"ERROR: {ex}");
-        ViewData["Mensaje"] = "Error interno. Contacte al administrador.";
-        return View();
-    }
-}
-
-[HttpPost]
-public IActionResult Registrar(Usuario usuario)
-{
-    try
-    {
-        if (!ModelState.IsValid)
-        {
-            return View(usuario);
-        }
-
-        using (SqlConnection cn = new SqlConnection(_connectionString))
-        {
-            SqlCommand cmd = new SqlCommand(
-                "INSERT INTO usuarios (nombre_usuario, correo_electronico, contrasena) " +
-                "VALUES (@nombre, @email, @pass)", cn);
-            
-            cmd.Parameters.AddWithValue("@nombre", usuario.nombre_usuario);
-            cmd.Parameters.AddWithValue("@email", usuario.correo_electronico);
-            cmd.Parameters.AddWithValue("@pass", usuario.contrasena);
-
-            cn.Open();
-            cmd.ExecuteNonQuery();
-            
-            TempData["RegistroExitoso"] = "¡Registro completado! Por favor inicia sesión";
-            return RedirectToAction("Login");
-        }
-    }
-    catch (SqlException ex) when (ex.Number == 2627)
-    {
-        ViewData["Mensaje"] = "El correo electrónico ya está registrado";
-        return View(usuario);
-    }
-    catch (Exception ex)
-    {
-        ViewData["Mensaje"] = $"Error al registrar: {ex.Message}";
-        return View(usuario);
-    }
-}
-        // Cerrar sesión
-        public IActionResult Logout()
-        {
-            HttpContext.Session.Clear();
-            return RedirectToAction("Login");
-        }
-        
     }
 }

@@ -53,6 +53,10 @@
               "target": "Package",
               "version": "[2.1.35, )"
             },
+            "Microsoft.AspNetCore.Authentication.Cookies": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
             "Microsoft.AspNetCore.Session": {
               "target": "Package",
               "version": "[2.3.0, )"
@@ -60,6 +64,10 @@
             "Microsoft.Extensions.Caching.Memory": {
               "target": "Package",
               "version": "[9.0.3, )"
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             },
             "System.Data.SqlClient": {
               "target": "Package",

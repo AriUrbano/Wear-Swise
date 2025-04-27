@@ -1,32 +1,31 @@
-using System.Diagnostics;
+using System.Data.SqlClient;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using PrimerProyecto.Models ;
+using System.Security.Claims;
 
-namespace PrimerProyecto.Controllers;
 
-public class HomeController : Controller
+namespace PrimerProyecto.Controllers
 {
-    private readonly ILogger<HomeController> _logger;
+    
+    public class HomeController : Controller {
 
-    public HomeController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
+     private readonly string _connectionString;
 
-     public IActionResult Index()
+        public HomeController(IConfiguration configuration)
+        {
+            _connectionString = configuration.GetConnectionString("DefaultConnection");
+        }
+    
+    
+    public IActionResult Index()
     {
-        // Verifica si hay sesión activa para mostrar contenido diferente
-        if (HttpContext.Session.GetInt32("user_id") != null)
-        {
-            ViewBag.UserName = HttpContext.Session.GetString("user_name");
-            ViewBag.IsLoggedIn = true;
-        }
-        else
-        {
-            ViewBag.IsLoggedIn = false;
-        }
         return View();
     }
-
+    
+    [Authorize] // Ejemplo de acción que sí requiere autenticación
+    public IActionResult MiPerfil()
+    {
+        return View();
+    }
+    }
 }
-

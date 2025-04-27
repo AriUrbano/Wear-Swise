@@ -1,48 +1,90 @@
 ﻿@{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Inicio";
 }
 
 <div>
     <body>
     <main>
-        <header class="header">
-        <div class="logo">
-            <h1><img src="~/Images/Logo Wear Swise.png" alt=""></h1>
-        </div>
-        <nav class="menu">
-            <button>Equipo</button>
-            <button>Comprar Productos</button>
-            <button>Vender Productos </button>
-        </nav>
-        <div class="search">
-            <input type="text" placeholder="Buscar...">
-        </div>
-        <div class="icons">
-            <button class="cart">
-                <span class="icon"><img src="~/Images/carrito-de-compras negro.png" alt="Carrito"></span> 
-            </button>
-            <button class="profile">
-               <span class="icon" onclick="window.location.href='@Url.Action("Login", "Account")'">
-  <img src="~/Images/usuario (1).png" alt="Usuario">
-</span>
-            </button>
-        </div>
-    </header>
-
+         <header class="header">
+            <div class="logo">
+                <h1><img src="~/Images/Logo Wear Swise.png" alt=""></h1>
+            </div>
+            <nav class="menu">
+                <button>Equipo</button>
+                <button onclick="window.location.href='@Url.Action("Listar", "Producto")'">
+                    Comprar Productos
+                </button>
+                <button>Vender Productos</button>
+            </nav>
+            <div class="search">
+                <input type="text" placeholder="Buscar...">
+            </div>
+            <div class="icons">
+                <!-- Botón del Carrito -->
+                <button class="cart" onclick="window.location.href='@Url.Action("Index", "Carrito")'">
+                    <span class="icon"><img src="~/Images/carrito-de-compras negro.png" alt="Carrito"></span>
+                    @if (User.Identity.IsAuthenticated && ViewBag.CarritoCount > 0)
+                    {
+                        <span class="cart-badge">@ViewBag.CarritoCount</span>
+                    }
+                </button>
+                
+                <!-- Botón de Login/Logout - Versión definitiva -->
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="logout-btn">
+                            <span class="icon">
+                                <img src="~/Images/logout-icon.png" alt="Cerrar sesión">
+                            </span>
+                            <span class="logout-text">Cerrar sesión</span>
+                        </button>
+                    </form>
+                }
+                else
+                {
+                    <button class="login-btn" onclick="window.location.href='@Url.Action("Login", "Account")'">
+                        <span class="icon">
+                            <img src="~/Images/login-icon.png" alt="Iniciar sesión">
+                        </span>
+                        <span class="login-text">Iniciar sesión</span>
+                    </button>
+                }
+            </div>
+        </header>
         <div class="welcome">
             <h1>BIENVENIDO A WEAR SWISE</h1>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <p class="welcome-message">¡Hola @User.Identity.Name! Descubre nuestras últimas colecciones.</p>
+            }
             <div class="categories">
-                <div class="category">
-                    <img src="Images/foto moodboard 3.jpg" alt="Hombres">
+                <div class="category" onclick="window.location.href='@Url.Action("Listar", "Producto", new { categoria = "hombres" })'">
+                    <img src="~/Images/foto moodboard 3.jpg" alt="Hombres">
                     <p>HOMBRES</p>
                 </div>
-                <div class="category">
-                    <img src="Images/moodboard 4.jpg" alt="Mujeres">
+                <div class="category" onclick="window.location.href='@Url.Action("Listar", "Producto", new { categoria = "mujeres" })'">
+                    <img src="~/Images/moodboard 4.jpg" alt="Mujeres">
                     <p>MUJERES</p>
                 </div>
-
             </div>
         </div>
     </main>
 </body>
 </div>
+
+@section Scripts {
+    <script>
+        function handleCartClick() {
+            @if (User.Identity.IsAuthenticated)
+            {
+                @:window.location.href = '@Url.Action("Index", "Carrito")';
+            }
+            else
+            {
+                @:window.location.href = '@Url.Action("Login", "Account", new { returnUrl = Url.Action("Index", "Carrito") })';
+            }
+        }
+    </script>
+}
