@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj": {}
+    "C:\\Users\\48792738\\Desktop\\polshucss\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj": {
+    "C:\\Users\\48792738\\Desktop\\polshucss\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
+        "projectUniqueName": "C:\\Users\\48792738\\Desktop\\polshucss\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
         "projectName": "PrimerProyecto",
-        "projectPath": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
-        "packagesPath": "C:\\Users\\ariur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\obj\\",
+        "projectPath": "C:\\Users\\48792738\\Desktop\\polshucss\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
+        "packagesPath": "C:\\Users\\48792738\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\48792738\\Desktop\\polshucss\\Wear-Swise\\Wear-Swise\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ariur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\48792738\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -97,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,16 +1,25 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
 
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - NombreProyecto</title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<<<<<<< HEAD
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+=======
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/navbar.css" asp-append-version="true" />
+>>>>>>> bb7b089510cc44ac03da597e66888ac5075037b5
 </head>
 
+
 <body>
+<<<<<<< HEAD
   
 @if (User.Identity.IsAuthenticated)
 {
@@ -20,20 +29,52 @@ else
 {
     <a class="nav-link" asp-controller="Account" asp-action="Login">Iniciar Sesión</a>
 }
+=======
+ 
+    <header class="navbar">
+        <div class="logo">
+            <h1><img src="~/Images/Logo Wear Swise.png" alt=""></h1>
+        </div>
+        <nav class="nav-buttons">
+            <button>Equipo</button>
+            <button>Comprar Productos</button>
+            <button>Vender Productos </button>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar...">
+        </div>
+        <div class="icons">
+            <button class="cart">
+                <span class="icon"><img src="~/Images/carrito-de-compras negro.png" alt="Carrito"></span>
+            </button>
+            <button class="profile">
+               <span class="icon" onclick="window.location.href='@Url.Action("Login", "Account")'">
+              <img src="~/Images/usuario (1).png" alt="Usuario">
+            </span>
+            </button>
+        </div>
+    </header>
+
+
+>>>>>>> bb7b089510cc44ac03da597e66888ac5075037b5
     <main role="main">
         @RenderBody()
     </main>
 
+
+ <footer>
+        <div class="social-icons">
+            <a href="#"><img src="~/Images/correo.png" class="fas fa-envelope"></i></a>
+            <a href="#"><img src="~/Images/instagram.png" class="fab fa-whatsapp"></i></a>
+            <a href="#"><img src="~/Images/whatsapp.png" class="fab fa-instagram"></i></a>
+        </div>
+        <p class="help">AYUDA</p>
+    </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-    @if (Context.Session.GetInt32("user_id") != null)
-{
-    <div class="float-end">
-        <span class="me-3">Bienvenido @Context.Session.GetString("user_name")</span>
-        <a href="@Url.Action("Logout", "Account")" class="btn btn-sm btn-danger">Cerrar Sesión</a>
-    </div>
-}
 </body>
 
+
 </html>
+

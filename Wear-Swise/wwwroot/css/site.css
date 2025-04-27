@@ -1,9 +1,19 @@
+@font-face {
+  font-family: 'Turnpike';
+  src: url('/fonts/Turnpike.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 body {
   font-family: 'Turnpike', sans-serif;
   margin: 0;
   background-color: #000;
   color: #fff;
 }
+
 
 .header {
   display: flex;
@@ -13,15 +23,18 @@ body {
   background-color: #1a1a1a;
 }
 
+
 .logo img {
   max-width: 150px;
   height: auto;
 }
 
+
 .menu {
   display: flex;
   gap: 20px;
 }
+
 
 .menu button {
   background-color: #333;
@@ -34,10 +47,12 @@ body {
   font-size: 14px;
 }
 
+
 .menu button:hover {
   background-color: #555;
   border-color: #fff;
 }
+
 
 .search input {
   padding: 5px;
@@ -48,10 +63,12 @@ body {
   font-size: 14px;
 }
 
+
 .icons {
   display: flex;
   gap: 15px;
 }
+
 
 .icons button {
   background-color: #333;
@@ -68,20 +85,24 @@ body {
   height: 50px;
 }
 
+
 .icons button .icon img {
   width: 24px;
   height: 24px;
 }
+
 
 .icons button:hover {
   background-color: #555;
   border-color: #fff;
 }
 
+
 .welcome {
   text-align: center;
   padding: 10px;
 }
+
 
 .categories {
   display: flex;
@@ -90,11 +111,13 @@ body {
   margin-top: 15px;
 }
 
+
 .category img {
   width: auto;
   height: 450px;
   border-radius: 10px;
 }
+
 
 .category p {
   text-align: center;
@@ -102,6 +125,7 @@ body {
   font-size: 16px;
   font-weight: bold;
 }
+
 
 footer {
   text-align: center;
@@ -112,103 +136,14 @@ footer {
   bottom: 0;
 }
 
+
 footer .social-icons a {
   display: inline-block;
   margin: 0 5px;
 }
 
+
 footer .social-icons img {
   width: 30px;
   height: 30px;
-}
-
-/* Estilos generales para auth pages */
-.auth-container {
-  max-width: 500px;
-  margin: 5rem auto;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.auth-card {
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.auth-header {
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
-  color: white;
-  padding: 1.5rem;
-  text-align: center;
-}
-
-.auth-body {
-  padding: 2rem;
-}
-
-.auth-footer {
-  background-color: #f8f9fa;
-  padding: 1rem;
-  text-align: center;
-}
-
-.auth-title {
-  font-weight: 600;
-  margin-bottom: 0;
-}
-
-.form-control {
-  border-radius: 8px;
-  padding: 12px 15px;
-  margin-bottom: 1.5rem;
-  border: 1px solid #e0e0e0;
-  transition: all 0.3s;
-}
-
-.form-control:focus {
-  border-color: #6e8efb;
-  box-shadow: 0 0 0 0.25rem rgba(110, 142, 251, 0.25);
-}
-
-.btn-auth {
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
-  border: none;
-  padding: 12px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  transition: all 0.3s;
-}
-
-.btn-auth:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(110, 142, 251, 0.4);
-}
-
-.auth-link {
-  color: #6e8efb;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.auth-link:hover {
-  text-decoration: underline;
-}
-
-/* Animaciones */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive */
-@media (max-width: 576px) {
-  .auth-container {
-      margin: 2rem auto;
-      padding: 0 15px;
-  }
-  
-  .auth-body {
-      padding: 1.5rem;
-  }
 }
