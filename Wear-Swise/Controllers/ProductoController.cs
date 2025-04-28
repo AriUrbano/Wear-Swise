@@ -6,7 +6,7 @@ namespace PrimerProyecto.Models;
 
 public class ProductoController : Controller
 {
-    private static string _connectionString = @"Server=.\SQLEXPRESS;Database=Info360;Trusted_Connection=True;";
+    private static string _connectionString = @"Server=.\;Database=Info360;Trusted_Connection=True;";
 
     public IActionResult Listar()
     {

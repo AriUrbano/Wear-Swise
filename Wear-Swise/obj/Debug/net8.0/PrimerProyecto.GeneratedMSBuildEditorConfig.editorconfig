@@ -9,55 +9,55 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PrimerProyecto
 build_property.RootNamespace = PrimerProyecto
-build_property.ProjectDir = C:\Users\ariur\Downloads\Info 360\Wear-Swise\Wear-Swise\
+build_property.ProjectDir = C:\Users\48113061\Downloads\wear swise\Wear-Swise\Wear-Swise\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\ariur\Downloads\Info 360\Wear-Swise\Wear-Swise
+build_property.MSBuildProjectDirectory = C:\Users\48113061\Downloads\wear swise\Wear-Swise\Wear-Swise
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/ariur/Downloads/Info 360/Wear-Swise/Wear-Swise/Views/Account/Login.cshtml]
+[C:/Users/48113061/Downloads/wear swise/Wear-Swise/Wear-Swise/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ariur/Downloads/Info 360/Wear-Swise/Wear-Swise/Views/Account/Registrar.cshtml]
+[C:/Users/48113061/Downloads/wear swise/Wear-Swise/Wear-Swise/Views/Account/Registrar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RyYXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ariur/Downloads/Info 360/Wear-Swise/Wear-Swise/Views/Carrito/index.cshtml]
+[C:/Users/48113061/Downloads/wear swise/Wear-Swise/Wear-Swise/Views/Carrito/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2Fycml0b1xpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ariur/Downloads/Info 360/Wear-Swise/Wear-Swise/Views/Home/Agregar.cshtml]
+[C:/Users/48113061/Downloads/wear swise/Wear-Swise/Wear-Swise/Views/Home/Agregar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZ3JlZ2FyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ariur/Downloads/Info 360/Wear-Swise/Wear-Swise/Views/Home/Equipo.cshtml]
+[C:/Users/48113061/Downloads/wear swise/Wear-Swise/Wear-Swise/Views/Home/Equipo.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcXVpcG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ariur/Downloads/Info 360/Wear-Swise/Wear-Swise/Views/Home/Index.cshtml]
+[C:/Users/48113061/Downloads/wear swise/Wear-Swise/Wear-Swise/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ariur/Downloads/Info 360/Wear-Swise/Wear-Swise/Views/Producto/Listar.cshtml]
+[C:/Users/48113061/Downloads/wear swise/Wear-Swise/Wear-Swise/Views/Producto/Listar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cTGlzdGFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ariur/Downloads/Info 360/Wear-Swise/Wear-Swise/Views/Shared/_Layout.cshtml]
+[C:/Users/48113061/Downloads/wear swise/Wear-Swise/Wear-Swise/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ariur/Downloads/Info 360/Wear-Swise/Wear-Swise/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/48113061/Downloads/wear swise/Wear-Swise/Wear-Swise/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ariur/Downloads/Info 360/Wear-Swise/Wear-Swise/Views/_ViewImports.cshtml]
+[C:/Users/48113061/Downloads/wear swise/Wear-Swise/Wear-Swise/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ariur/Downloads/Info 360/Wear-Swise/Wear-Swise/Views/_ViewStart.cshtml]
+[C:/Users/48113061/Downloads/wear swise/Wear-Swise/Wear-Swise/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
