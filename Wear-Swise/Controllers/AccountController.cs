@@ -10,7 +10,11 @@ namespace PrimerProyecto.Controllers
 
 public class AccountController : Controller
 {
+<<<<<<< HEAD
         private static string _connectionString = @"Server=.\;Database=Info360;Trusted_Connection=True;";
+=======
+private static string _connectionString = @"Server=.\;Database=Info360;Trusted_Connection=True;";
+>>>>>>> 480e169f8e3f79895f3ea1d934fb718ba99a2362
 
 
     [HttpGet]

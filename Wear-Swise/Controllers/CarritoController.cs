@@ -7,7 +7,7 @@ using PrimerProyecto.Models;
 [Authorize]
 public class CarritoController : Controller
 {
-    private static string _connectionString = @"Server=.\SQLEXPRESS;Database=Info360;Trusted_Connection=True;";
+    private static string _connectionString = @"Server=.\;Database=Info360;Trusted_Connection=True;";
     private readonly ILogger<CarritoController> _logger;
 
     // GET: /Carrito
@@ -328,6 +328,66 @@ public IActionResult GetCartCount()
     {
         return Json(new { count = 0 });
     }
+}
+private List<PedidoHistorialViewModel> ObtenerHistorialPedidos(SqlConnection connection, string userId)
+{
+    var historial = new List<PedidoHistorialViewModel>();
+
+    // Obtener los pedidos completados
+    var command = new SqlCommand(
+        @"SELECT id_pedido, fecha_pedido, total, estado 
+        FROM pedidos 
+        WHERE id_usuario = @userId AND estado = 'Completado'
+        ORDER BY fecha_pedido DESC", 
+        connection);
+    
+    command.Parameters.AddWithValue("@userId", userId);
+
+    using (var reader = command.ExecuteReader())
+    {
+        while (reader.Read())
+        {
+            var pedido = new PedidoHistorialViewModel
+            {
+                IdPedido = (int)reader["id_pedido"],
+                Fecha = (DateTime)reader["fecha_pedido"],
+                Total = (decimal)reader["total"],
+                Estado = reader["estado"].ToString()
+            };
+            
+            historial.Add(pedido);
+        }
+    }
+
+    // Obtener los items para cada pedido
+    foreach (var pedido in historial)
+    {
+        var itemsCommand = new SqlCommand(
+            @"SELECT dp.id_detalle_pedido, p.id_producto, p.nombre_producto, dp.precio, dp.cantidad 
+            FROM detalles_pedido dp 
+            JOIN productos p ON dp.id_producto = p.id_producto 
+            WHERE dp.id_pedido = @pedidoId", 
+            connection);
+        
+        itemsCommand.Parameters.AddWithValue("@pedidoId", pedido.IdPedido);
+
+        using (var itemsReader = itemsCommand.ExecuteReader())
+        {
+            while (itemsReader.Read())
+            {
+                pedido.Items.Add(new DetallePedidoViewModel
+                {
+                    IdDetallePedido = (int)itemsReader["id_detalle_pedido"],
+                    IdProducto = (int)itemsReader["id_producto"],
+                    NombreProducto = itemsReader["nombre_producto"].ToString(),
+                    Precio = (decimal)itemsReader["precio"],
+                    Cantidad = (int)itemsReader["cantidad"]
+                });
+            }
+        }
+    }
+
+    return historial;
 }
     #endregion
 }

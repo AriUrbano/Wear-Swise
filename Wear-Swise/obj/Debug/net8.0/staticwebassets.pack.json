@@ -1,6 +1,7 @@
 {
   "Files": [
     {
+<<<<<<< HEAD
       "Id": "C:\\Users\\48792738\\Downloads\\ds\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\Logo Wear Swise.png",
       "PackagePath": "staticwebassets\\Images\\Logo Wear Swise.png"
     },
@@ -106,6 +107,109 @@
     },
     {
       "Id": "C:\\Users\\48792738\\Downloads\\ds\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+=======
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\Logo Wear Swise.png",
+      "PackagePath": "staticwebassets\\Images\\Logo Wear Swise.png"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\carrito-de-compras negro.png",
+      "PackagePath": "staticwebassets\\Images\\carrito-de-compras negro.png"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\correo.png",
+      "PackagePath": "staticwebassets\\Images\\correo.png"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\foto moodboard 3.jpg",
+      "PackagePath": "staticwebassets\\Images\\foto moodboard 3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\instagram.png",
+      "PackagePath": "staticwebassets\\Images\\instagram.png"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\moodboard 4.jpg",
+      "PackagePath": "staticwebassets\\Images\\moodboard 4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\usuario (1).png",
+      "PackagePath": "staticwebassets\\Images\\usuario (1).png"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\whatsapp.png",
+      "PackagePath": "staticwebassets\\Images\\whatsapp.png"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\css\\Login.css",
+      "PackagePath": "staticwebassets\\css\\Login.css"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\css\\navbar.css",
+      "PackagePath": "staticwebassets\\css\\navbar.css"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\fonts\\Turnpike.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Turnpike.ttf"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+>>>>>>> 480e169f8e3f79895f3ea1d934fb718ba99a2362
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

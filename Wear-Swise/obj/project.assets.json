@@ -4019,23 +4019,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\48792738\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\48113061\\.nuget\\packages\\": {},
+>>>>>>> 480e169f8e3f79895f3ea1d934fb718ba99a2362
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\48792738\\Downloads\\ds\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
       "projectName": "PrimerProyecto",
       "projectPath": "C:\\Users\\48792738\\Downloads\\ds\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
       "packagesPath": "C:\\Users\\48792738\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\48792738\\Downloads\\ds\\Wear-Swise\\Wear-Swise\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
+      "projectName": "PrimerProyecto",
+      "projectPath": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
+      "packagesPath": "C:\\Users\\48113061\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\48113061\\Downloads\\wear swise\\Wear-Swise\\Wear-Swise\\obj\\",
+>>>>>>> 480e169f8e3f79895f3ea1d934fb718ba99a2362
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\48792738\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\48113061\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 480e169f8e3f79895f3ea1d934fb718ba99a2362
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
