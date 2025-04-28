@@ -6,26 +6,12 @@ using System.Security.Claims;
 
 namespace PrimerProyecto.Controllers
 {
-    
-    public class HomeController : Controller {
-
-     private readonly string _connectionString;
-
-        public HomeController(IConfiguration configuration)
-        {
-            _connectionString = configuration.GetConnectionString("DefaultConnection");
-        }
-    
-    
+   public class HomeController : Controller
+{
+    [AllowAnonymous] // Permite acceso sin necesidad de login
     public IActionResult Index()
     {
         return View();
     }
-    
-    [Authorize] // Ejemplo de acción que sí requiere autenticación
-    public IActionResult MiPerfil()
-    {
-        return View();
-    }
-    }
+}
 }

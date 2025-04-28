@@ -11,69 +11,76 @@ public class CarritoController : Controller
     private readonly ILogger<CarritoController> _logger;
 
     // GET: /Carrito
-    public IActionResult Index()
+  [Authorize]
+public IActionResult Index()
 {
     try
     {
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
         if (string.IsNullOrEmpty(userId))
-        {
-            TempData["Error"] = "Debe iniciar sesión para ver el carrito";
             return RedirectToAction("Login", "Account");
-        }
-
-        var model = new CarritoViewModel { Items = new List<DetallePedidoViewModel>() };
 
         using (var connection = new SqlConnection(_connectionString))
         {
             connection.Open();
-            
-            // Verificar si hay un pedido pendiente primero
-            var pedidoId = ObtenerPedidoPendiente(connection, userId);
-            if (pedidoId.HasValue)
-            {
-                var query = @"SELECT dp.id_detalle_pedido, p.id_producto, p.nombre_producto, 
-                            dp.precio, dp.cantidad, p.imagen_url
-                            FROM detalles_pedido dp
-                            JOIN productos p ON dp.id_producto = p.id_producto
-                            JOIN pedidos pe ON dp.id_pedido = pe.id_pedido
-                            WHERE pe.id_pedido = @pedidoId";
 
-                using (var command = new SqlCommand(query, connection))
+            // 1. Obtener ID del pedido pendiente
+            var pedidoId = new SqlCommand(
+                "SELECT TOP 1 id_pedido FROM pedidos WHERE id_usuario = @userId AND estado = 'Pendiente'",
+                connection)
+            {
+                Parameters = { new SqlParameter("@userId", userId) }
+            }.ExecuteScalar() as int?;
+
+            if (!pedidoId.HasValue)
+                return View(new CarritoViewModel { Items = new List<DetallePedidoViewModel>() });
+
+            // 2. Consulta directa de items del carrito
+            var command = new SqlCommand(
+                "SELECT dp.id_detalle_pedido, p.id_producto, p.nombre_producto, dp.precio, dp.cantidad " +
+                "FROM detalles_pedido dp JOIN productos p ON dp.id_producto = p.id_producto " +
+                "WHERE dp.id_pedido = @pedidoId", 
+                connection);
+            
+            command.Parameters.AddWithValue("@pedidoId", pedidoId.Value);
+
+            var items = new List<DetallePedidoViewModel>();
+            using (var reader = command.ExecuteReader())
+            {
+                while (reader.Read())
                 {
-                    command.Parameters.AddWithValue("@pedidoId", pedidoId.Value);
-                    
-                    using (var reader = command.ExecuteReader())
+                    items.Add(new DetallePedidoViewModel
                     {
-                        while (reader.Read())
-                        {
-                            model.Items.Add(new DetallePedidoViewModel
-                            {
-                                IdDetallePedido = reader.GetInt32(0),
-                                IdProducto = reader.GetInt32(1),
-                                NombreProducto = reader.GetString(2),
-                                Precio = reader.GetDecimal(3),
-                                Cantidad = reader.GetInt32(4),
-                            });
-                        }
-                    }
+                        IdDetallePedido = (int)reader["id_detalle_pedido"],
+                        IdProducto = (int)reader["id_producto"],
+                        NombreProducto = reader["nombre_producto"].ToString(),
+                        Precio = (decimal)reader["precio"],
+                        Cantidad = (int)reader["cantidad"]
+                    });
                 }
             }
-        }
 
-        // Actualizar el contador del carrito
-        ViewBag.CarritoCount = model.Items.Sum(i => i.Cantidad);
-        
-        return View(model);
+            return View(new CarritoViewModel { Items = items });
+        }
     }
-    catch (Exception ex)
+    catch (Exception)
     {
-        _logger.LogError(ex, "Error al cargar el carrito");
-        TempData["Error"] = "Error al cargar el carrito. Por favor, inténtelo nuevamente.";
         return View(new CarritoViewModel { Items = new List<DetallePedidoViewModel>() });
     }
 }
-
+private int? ObtenerPedidoPendiente(SqlConnection connection, string userId)
+{
+    const string query = @"SELECT TOP 1 id_pedido 
+                         FROM pedidos 
+                         WHERE id_usuario = @userId AND estado = 'Pendiente'";
+    
+    using (var command = new SqlCommand(query, connection))
+    {
+        command.Parameters.AddWithValue("@userId", userId);
+        var result = command.ExecuteScalar();
+        return result != null ? Convert.ToInt32(result) : (int?)null;
+    }
+}
     // POST: /Carrito/Agregar
     [HttpPost]
     [ValidateAntiForgeryToken]
@@ -210,15 +217,6 @@ public class CarritoController : Controller
 
     #region Métodos Auxiliares Privados
 
-    private int? ObtenerPedidoPendiente(SqlConnection connection, string userId)
-    {
-        var command = new SqlCommand(
-            "SELECT id_pedido FROM pedidos WHERE id_usuario = @userId AND estado = 'Pendiente'", 
-            connection);
-        
-        command.Parameters.AddWithValue("@userId", userId);
-        return command.ExecuteScalar() as int?;
-    }
 
     private int CrearNuevoPedido(SqlConnection connection, string userId)
     {

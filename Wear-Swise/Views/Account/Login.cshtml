@@ -1,4 +1,7 @@
+
+
 @model PrimerProyecto.Models.LoginModel
+
 @{
     Layout = null;
     ViewData["Title"] = "Login";
@@ -6,7 +9,9 @@
 
 <!DOCTYPE html>
 <html lang="es">
+    
 <head>
+    
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Wear Swise</title>
@@ -14,81 +19,56 @@
     <link href="~/css/Login.css" rel="stylesheet" />
 </head>
 <body>
-<<<<<<< HEAD
-    <div class="auth-container">
-        <div class="auth-card">
-            <div class="auth-header">
-                <h2 class="auth-title">Inicia Sesión</h2>
-            </div>
-            <div class="auth-body">
-                @if (TempData["Error"] != null)
-                {
-                    <div class="alert alert-danger">@TempData["Error"]</div>
-                }
-                
-                <form asp-action="Login" method="post">
-                    <input type="hidden" name="returnUrl" value="@ViewData["ReturnUrl"]" />
-                    
-                    <div class="mb-3">
-                        <label asp-for="CorreoElectronico" class="form-label">Correo Electrónico</label>
-                        <input asp-for="CorreoElectronico" class="form-control" required>
-                        <span asp-validation-for="CorreoElectronico" class="text-danger"></span>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label asp-for="Contrasena" class="form-label">Contraseña</label>
-                        <input asp-for="Contrasena" type="password" class="form-control" required>
-                        <span asp-validation-for="Contrasena" class="text-danger"></span>
-                    </div>
-                    
-                    <div class="mb-3 form-check">
-                        <input asp-for="Recordarme" class="form-check-input">
-                        <label asp-for="Recordarme" class="form-check-label">Recordarme</label>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-auth w-100">Ingresar</button>
-                </form>
-            </div>
-            <div class="auth-footer">
-                <a asp-action="Registrar" class="auth-link">¿No tienes cuenta? Regístrate</a>
-=======
+    
     <div class="login-container">
         <div class="login-card">
             <h2 class="login-title">INICIAR SESION</h2>
             <p class="login-subtitle">Inicia sesión con tu cuenta</p>
-
-            <form asp-action="Login" method="post">
-                <div class="mb-3">
-                    <label for="correo_electronico" class="form-label">Correo Electrónico</label>
-                    <input type="email" name="correo_electronico" class="form-control" placeholder="Ingresa tu correo" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="contrasena" class="form-label">Contraseña</label>
-                    <input type="password" name="contrasena" class="form-control" placeholder="Ingresa tu contraseña" required>
-                </div>
-
-                @if (ViewData["Mensaje"] != null)
-                {
-                    <div class="alert alert-danger">@ViewData["Mensaje"]</div>
-                }
-
-                @if (TempData["RegistroExitoso"] != null)
-                {
-                    <div class="alert alert-success">@TempData["RegistroExitoso"]</div>
-                }
-
-                <button type="submit" class="btn btn-login w-100">Iniciar Sesión</button>
-            </form>
+<!-- Encima del formulario -->
+@if (ViewData["ErrorMessages"] != null)
+{
+    <div class="alert alert-danger">
+        <h5>Errores encontrados:</h5>
+        <ul>
+            @foreach (var error in (List<string>)ViewData["ErrorMessages"])
+            {
+                <li>@error</li>
+            }
+        </ul>
+    </div>
+}
+         <form asp-action="Login" method="post">
+    @Html.AntiForgeryToken()
+    
+    <div class="mb-3">
+        <label asp-for="CorreoElectronico" class="form-label"></label>
+<input asp-for="CorreoElectronico" class="form-control" />
+        <span asp-validation-for="CorreoElectronico" class="text-danger"></span>
+    </div>
+    
+    <div class="mb-3">
+        <label asp-for="Contrasena" class="form-label"></label>
+<input asp-for="Contrasena" type="password" class="form-control" />
+        <span asp-validation-for="Contrasena" class="text-danger"></span>
+    </div>
+    
+    <div class="mb-3 form-check">
+        <input asp-for="Recordarme" class="form-check-input" />
+        <label asp-for="Recordarme" class="form-check-label">Recordar mis datos</label>
+    </div>
+    
+    <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+</form>
 
             <div class="register-link">
                 ¿No tienes una cuenta? <a asp-action="Registrar">Regístrate aquí</a>
->>>>>>> bb7b089510cc44ac03da597e66888ac5075037b5
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <partial name="_ValidationScriptsPartial" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js"></script>
 </body>
 </html>

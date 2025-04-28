@@ -5,7 +5,6 @@
 <div>
     <body>
     <main>
-<<<<<<< HEAD
          <header class="header">
             <div class="logo">
                 <h1><img src="~/Images/Logo Wear Swise.png" alt=""></h1>
@@ -30,16 +29,15 @@
                     }
                 </button>
                 
-                <!-- Botón de Login/Logout - Versión definitiva -->
+                <!-- Botón de Login/Logout - Versión unificada -->
                 @if (User.Identity.IsAuthenticated)
                 {
                     <form asp-controller="Account" asp-action="Logout" method="post" class="d-inline">
                         @Html.AntiForgeryToken()
                         <button type="submit" class="logout-btn">
                             <span class="icon">
-                                <img src="~/Images/logout-icon.png" alt="Cerrar sesión">
+                                <img src="~/Images/usuario (1).png" alt="Cerrar sesión">
                             </span>
-                            <span class="logout-text">Cerrar sesión</span>
                         </button>
                     </form>
                 }
@@ -47,21 +45,26 @@
                 {
                     <button class="login-btn" onclick="window.location.href='@Url.Action("Login", "Account")'">
                         <span class="icon">
-                            <img src="~/Images/login-icon.png" alt="Iniciar sesión">
+                            <img src="~/Images/usuario (1).png" alt="Iniciar sesión">
                         </span>
-                        <span class="login-text">Iniciar sesión</span>
                     </button>
                 }
             </div>
         </header>
-=======
->>>>>>> bb7b089510cc44ac03da597e66888ac5075037b5
         <div class="welcome">
             <h1>BIENVENIDO A WEAR SWISE</h1>
-            @if (User.Identity.IsAuthenticated)
-            {
-                <p class="welcome-message">¡Hola @User.Identity.Name! Descubre nuestras últimas colecciones.</p>
-            }
+           @if (User.Identity.IsAuthenticated)
+    {
+        <div class="welcome-message-container">
+            <p class="welcome-message">¡Hola @User.Identity.Name! Descubre nuestras últimas colecciones.</p>
+            <form asp-controller="Account" asp-action="Logout" method="post" class="logout-form">
+                @Html.AntiForgeryToken()
+                <button type="submit" class="logout-btn-welcome">
+                    <span>Cerrar sesión</span>
+                </button>
+            </form>
+        </div>
+    }
             <div class="categories">
                 <div class="category" onclick="window.location.href='@Url.Action("Listar", "Producto", new { categoria = "hombres" })'">
                     <img src="~/Images/foto moodboard 3.jpg" alt="Hombres">
@@ -71,32 +74,8 @@
                     <img src="~/Images/moodboard 4.jpg" alt="Mujeres">
                     <p>MUJERES</p>
                 </div>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> bb7b089510cc44ac03da597e66888ac5075037b5
             </div>
         </div>
     </main>
 </body>
-<<<<<<< HEAD
 </div>
-
-@section Scripts {
-    <script>
-        function handleCartClick() {
-            @if (User.Identity.IsAuthenticated)
-            {
-                @:window.location.href = '@Url.Action("Index", "Carrito")';
-            }
-            else
-            {
-                @:window.location.href = '@Url.Action("Login", "Account", new { returnUrl = Url.Action("Index", "Carrito") })';
-            }
-        }
-    </script>
-}
-=======
-</div>
->>>>>>> bb7b089510cc44ac03da597e66888ac5075037b5
