@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 using System.Security.Claims;
 
+
 [Authorize]
 public class CarritoController : Controller
 {
@@ -285,7 +286,7 @@ public class CarritoController : Controller
         return items;
     }
 
-   private List<PedidoCompletoViewModel> ObtenerHistorialPedidos(SqlConnection connection, string userId)
+    private List<PedidoCompletoViewModel> ObtenerHistorialPedidos(SqlConnection connection, string userId)
 {
     var historial = new List<PedidoCompletoViewModel>();
 
@@ -372,6 +373,7 @@ public class CarritoController : Controller
 
     return historial;
 }
+
     private List<DetallePedidoViewModel> ObtenerItemsPedido(SqlConnection connection, int pedidoId)
     {
         var items = new List<DetallePedidoViewModel>();

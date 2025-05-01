@@ -10,12 +10,7 @@ namespace PrimerProyecto.Controllers
 
 public class AccountController : Controller
 {
-    private readonly string _connectionString;
-
-    public AccountController(IConfiguration configuration)
-    {
-        _connectionString = configuration.GetConnectionString("DefaultConnection");
-    }
+        private static string _connectionString = @"Server=.\SQLEXPRESS;Database=Info360;Trusted_Connection=True;";
 
     [HttpGet]
 public IActionResult Login(string returnUrl = null)
