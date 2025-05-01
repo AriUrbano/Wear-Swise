@@ -4,26 +4,35 @@
     Layout = null;
 }
 
-<!-- Cabecera igual que en Login.cshtml -->
 
+<!-- Cabecera igual que en Login.cshtml -->
+<head>
+   
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Wear Swise</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/css/registrar.css" rel="stylesheet" />
+</head>
+<body>
 <div class="auth-container">
     <div class="auth-card">
         <h2 class="auth-title">Registro de Usuario</h2>
-        
+       
         @if (TempData["RegistroExitoso"] != null)
         {
             <div class="alert alert-success">@TempData["RegistroExitoso"]</div>
         }
-        
+       
         <form asp-action="Registrar" method="post">
             @Html.AntiForgeryToken()
-            
+           
             <div class="mb-3">
                 <label asp-for="NombreUsuario" class="form-label"></label>
                 <input asp-for="NombreUsuario" class="form-control" />
                 <span asp-validation-for="NombreUsuario" class="text-danger"></span>
             </div>
-            
+           
             <div class="mb-3">
                 <label asp-for="CorreoElectronico" class="form-label"></label>
                 <input asp-for="CorreoElectronico" class="form-control" />
@@ -33,26 +42,28 @@
                     <span class="text-danger">@ViewData.ModelState["CorreoElectronico"].Errors.First().ErrorMessage</span>
                 }
             </div>
-            
+           
             <div class="mb-3">
                 <label asp-for="Contrasena" class="form-label"></label>
                 <input asp-for="Contrasena" type="password" class="form-control" />
                 <span asp-validation-for="Contrasena" class="text-danger"></span>
             </div>
-            
+           
             <div class="mb-3">
                 <label asp-for="ConfirmarContrasena" class="form-label"></label>
                 <input asp-for="ConfirmarContrasena" type="password" class="form-control" />
                 <span asp-validation-for="ConfirmarContrasena" class="text-danger"></span>
             </div>
-            
+           
             <button type="submit" class="btn btn-auth w-100">Registrarse</button>
         </form>
-        
+       
         <div class="auth-footer">
             <a asp-action="Login" class="auth-link">¿Ya tienes cuenta? Inicia Sesión</a>
         </div>
     </div>
 </div>
+</body>
+
 
 <!-- Scripts igual que en Login.cshtml -->

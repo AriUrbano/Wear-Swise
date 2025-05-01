@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vhr4vuhY/HIjDlG50NlotRue1miL64JwYtaYMfOBCnE=",
+  "Hash": "8G1A9txNy15ScTB3dt2SfpPP3T3Q+AWHvfhWTinKWHc=",
   "Source": "PrimerProyecto",
   "BasePath": "_content/PrimerProyecto",
   "Mode": "Default",
@@ -53,6 +53,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\navbar.css"
+    },
+    {
+      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\css\\registrar.css",
+      "SourceId": "PrimerProyecto",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "BasePath": "_content/PrimerProyecto",
+      "RelativePath": "css/registrar.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\registrar.css"
     },
     {
       "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\css\\site.css",
