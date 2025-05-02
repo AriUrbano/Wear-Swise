@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8G1A9txNy15ScTB3dt2SfpPP3T3Q+AWHvfhWTinKWHc=",
+  "Hash": "ezEDzIkKlp/nmi//up3jIkZxrCFiN4wrqeTNWa5OFvY=",
   "Source": "PrimerProyecto",
   "BasePath": "_content/PrimerProyecto",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "PrimerProyecto\\wwwroot",
       "Source": "PrimerProyecto",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\css\\Login.css",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\css\\Login.css",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "css/Login.css",
       "AssetKind": "All",
@@ -36,10 +36,10 @@
       "OriginalItemSpec": "wwwroot\\css\\Login.css"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\css\\navbar.css",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\css\\navbar.css",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "css/navbar.css",
       "AssetKind": "All",
@@ -55,10 +55,10 @@
       "OriginalItemSpec": "wwwroot\\css\\navbar.css"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\css\\registrar.css",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\css\\registrar.css",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "css/registrar.css",
       "AssetKind": "All",
@@ -74,10 +74,10 @@
       "OriginalItemSpec": "wwwroot\\css\\registrar.css"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\css\\site.css",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -93,10 +93,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\favicon.ico",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\favicon.ico",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -112,10 +112,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\fonts\\Turnpike.ttf",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\fonts\\Turnpike.ttf",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "fonts/Turnpike.ttf",
       "AssetKind": "All",
@@ -131,10 +131,10 @@
       "OriginalItemSpec": "wwwroot\\fonts\\Turnpike.ttf"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\carrito-de-compras negro.png",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\carrito-de-compras negro.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "Images/carrito-de-compras negro.png",
       "AssetKind": "All",
@@ -150,10 +150,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\carrito-de-compras negro.png"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\correo.png",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\correo.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "Images/correo.png",
       "AssetKind": "All",
@@ -169,10 +169,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\correo.png"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\foto moodboard 3.jpg",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\foto moodboard 3.jpg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "Images/foto moodboard 3.jpg",
       "AssetKind": "All",
@@ -188,10 +188,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\foto moodboard 3.jpg"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\instagram.png",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\instagram.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "Images/instagram.png",
       "AssetKind": "All",
@@ -207,10 +207,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\instagram.png"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\Logo Wear Swise.png",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\Logo Wear Swise.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "Images/Logo Wear Swise.png",
       "AssetKind": "All",
@@ -226,10 +226,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\Logo Wear Swise.png"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\moodboard 4.jpg",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\moodboard 4.jpg",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "Images/moodboard 4.jpg",
       "AssetKind": "All",
@@ -245,10 +245,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\moodboard 4.jpg"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\usuario (1).png",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\usuario (1).png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "Images/usuario (1).png",
       "AssetKind": "All",
@@ -264,10 +264,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\usuario (1).png"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\whatsapp.png",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\Images\\whatsapp.png",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "Images/whatsapp.png",
       "AssetKind": "All",
@@ -283,10 +283,10 @@
       "OriginalItemSpec": "wwwroot\\Images\\whatsapp.png"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\js\\site.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -302,10 +302,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -321,10 +321,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",
@@ -359,10 +359,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -378,10 +378,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -397,10 +397,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -416,10 +416,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -435,10 +435,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -454,10 +454,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -473,10 +473,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -492,10 +492,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -511,10 +511,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "PrimerProyecto",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\wwwroot\\",
       "BasePath": "_content/PrimerProyecto",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",

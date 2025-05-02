@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj": {}
+    "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj": {
+    "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
+        "projectUniqueName": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
         "projectName": "PrimerProyecto",
-        "projectPath": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
+        "projectPath": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
         "packagesPath": "C:\\Users\\ariur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\obj\\",
+        "outputPath": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ariur\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -4024,11 +4024,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
+      "projectUniqueName": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
       "projectName": "PrimerProyecto",
-      "projectPath": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
+      "projectPath": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\PrimerProyecto.csproj",
       "packagesPath": "C:\\Users\\ariur\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\obj\\",
+      "outputPath": "C:\\Users\\ariur\\Downloads\\Sas\\Wear-Swise\\Wear-Swise\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ariur\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4117,13 +4117,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\ariur\\Downloads\\Info 360\\Wear-Swise\\Wear-Swise\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
